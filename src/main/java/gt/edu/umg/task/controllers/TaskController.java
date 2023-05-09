@@ -11,31 +11,31 @@ import java.util.List;
 @RequestMapping("/product")
 public class TaskController {
     @Autowired
-    ProductService TaskService;
+    TaskService taskService;
     @GetMapping
-
-
-    public List<Task> listaTask(){
-
-        return TaskService.findAll();
-
-    }
-    
-    public Task findById( Long id){
-        return null;
+    public List<Task> findAll(){
+        return taskService.findAll();
     }
 
+
+    @GetMapping(value="/{id}")
+    public Task findById(@PathVariable Long id){
+        return taskService.findById(id);
+    }
+
+    @PostMapping()
 
     public Task createTask( Task task){
-        return null;
+        return taskService.create(task);
     }
 
-
-    public Task modifyTask( Long id,  Task task){
-        return null;
+    @PutMapping(value="/{id}")
+    public Task modifyTask(@PathVariable Long id,  @RequestBody Task task){
+        return taskService.modify(id, task);
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteProduct(Long id){
+    public void deleteProduct(@PathVariable Long id){
+        taskService.delete(id);
     }
 }
