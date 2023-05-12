@@ -12,14 +12,14 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSwagger2
+//@EnableSwagger2
 public class TaskApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TaskApplication.class, args);
 	}
 		SpringApplication.run(TaskApplication.class, args);
-	@Bean
+/*	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
@@ -35,5 +35,5 @@ public class TaskApplication {
 				.build();
 
 	}
-
+*/
 }
